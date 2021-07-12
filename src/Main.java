@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
         File myFile = null;
         Scanner fileScanner = null;
-        DirectedGraph myGraph = new DirectedGraph();
 
         JFileChooser chooser = new JFileChooser();
         int returnVal = chooser.showOpenDialog(null);
@@ -18,7 +17,7 @@ public class Main {
             myFile = new File(chooser.getSelectedFile().getAbsolutePath());
         }
         try {
-            myGraph.parseFile(myFile);
+            DirectedGraph myGraph = FileParser.parseFile(myFile);
             myGraph.printGraph();
             System.out.print("ClassA");
             myGraph.dfsRecursion("ClassA");

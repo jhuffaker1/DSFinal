@@ -27,21 +27,7 @@ public class DirectedGraph {
     public void descend() {
         this.depth += 1;
     }
-    public void parseFile(File inputFile) throws InvalidInputSyntax, FileNotFoundException {
-        Scanner fileScanner = null;
 
-        fileScanner = new Scanner(inputFile);
-        int counter = 0;
-        while (fileScanner.hasNext()) {
-            String currentLine = fileScanner.nextLine();
-            String[] myClasses = currentLine.split(" ");
-            myClassList.add(myClasses[0]);
-            for (int i=1; i < myClasses.length; i++) {
-                this.addEdge(this.adjList, counter, myClasses[i]);
-            }
-            counter++;
-        }
-    }
 
 
     void dfsRecursion(String start) throws InvalidInputSyntax {
